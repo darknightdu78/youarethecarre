@@ -13,6 +13,7 @@ game.PlayScreen = me.ScreenObject.extend({
         this.HUD = new game.HUD.Container();
         me.game.world.addChild(this.HUD);
         me.audio.setVolume(0.5);
+        me.audio.stopTrack();
         me.audio.playTrack("track1");
     },
 

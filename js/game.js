@@ -35,7 +35,8 @@ var game = {
 
     me.state.set(me.state.LOADING, new game.TitleScreen());
     // Initialize melonJS and display a loading screen.
-    me.state.change(me.state.LOADING);
+    me.state.change(me.state.LOADING)
+    ;
 
     this.level = 0;
 },
