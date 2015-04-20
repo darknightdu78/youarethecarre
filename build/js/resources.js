@@ -1,5 +1,15 @@
 game.resources = [
     {
+        "name": "track1",
+        "type": "audio",
+        "src": "data/bgm/"
+    },
+    {
+        "name": "track2",
+        "type": "audio",
+        "src": "data/bgm/"
+    },
+    {
         "name": "bonus",
         "type": "audio",
         "src": "data/sfx/"
