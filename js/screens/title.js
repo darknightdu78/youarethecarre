@@ -14,8 +14,6 @@ game.TitleScreen = me.ScreenObject.extend({
 
 game.TitlePressEnterScreen = me.ScreenObject.extend({
   onResetEvent : function() {
-      me.audio.setVolume(0.5);
-      me.audio.playTrack("title");
       me.game.world.addChild(
       new me.Sprite (
         0,0,
@@ -28,6 +26,8 @@ game.TitlePressEnterScreen = me.ScreenObject.extend({
           me.state.change(me.state.PLAY);
         }
       }); 
+      me.audio.setVolume(0.5);
+      me.audio.playTrack("title");
 
   }
 });
