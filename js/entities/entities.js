@@ -87,7 +87,11 @@ game.HeroEntity = me.Entity.extend({
         me.game.viewport.fadeIn('#fff', 150, function(){
             game.level++;
             me.levelDirector.loadLevel('area' + game.level);
-            if (game.level > 1) {
+            if (game.level == 5) {
+                me.audio.stopTrack();            
+                me.audio.playTrack("end");            
+            }
+            else if (game.level > 1) {
                 me.audio.stopTrack();            
                 me.audio.playTrack("track2");            
             }
@@ -262,7 +266,11 @@ game.EndOfTheLevelEntity = me.CollectableEntity.extend({
   onCollision : function (response, other) {
     me.game.viewport.fadeIn('#fff', 150, function(){
         game.level++;
-        if (game.level > 1) {
+        if (game.level == 5) {
+            me.audio.stopTrack();            
+            me.audio.playTrack("end");            
+        }        
+        else if (game.level > 1) {
             me.audio.stopTrack();            
             me.audio.playTrack("track2");            
         }
