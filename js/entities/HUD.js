@@ -52,7 +52,7 @@ game.HUD.QuestTextItem = me.Renderable.extend({
         if (this.currentLevel != game.level) {
             this.currentLevel = game.level;
             this.currentText = -1;
-            this.mselapsed = 0;
+            this.mselapsed = TIME_BET;
             this.text = '';
         }
         this.mselapsed += dt;
