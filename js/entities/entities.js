@@ -83,7 +83,22 @@ game.HeroEntity = me.Entity.extend({
       }
  
     }
-g    if (me.input.isKeyPressed('reload')) {
+    if (me.input.isKeyPressed('cheat')) {
+        me.game.viewport.fadeIn('#fff', 150, function(){
+            game.level++;
+            me.levelDirector.loadLevel('area' + game.level);
+            if (game.level == 5) {
+                me.audio.stopTrack();            
+                me.audio.playTrack("end");            
+            }
+            else if (game.level > 1) {
+                me.audio.stopTrack();            
+                me.audio.playTrack("track2");            
+            }
+        });
+
+    }
+    if (me.input.isKeyPressed('reload')) {
         me.game.viewport.fadeIn('#000', 150, function() {
             if (game.level != 5) {
                 me.levelDirector.reloadLevel();                
@@ -251,7 +266,11 @@ game.EndOfTheLevelEntity = me.CollectableEntity.extend({
   onCollision : function (response, other) {
     me.game.viewport.fadeIn('#fff', 150, function(){
         game.level++;
-        if (game.level > 1) {
+        if (game.level == 5) {
+            me.audio.stopTrack();            
+            me.audio.playTrack("end");            
+        }        
+        else if (game.level > 1) {
             me.audio.stopTrack();            
             me.audio.playTrack("track2");            
         }
